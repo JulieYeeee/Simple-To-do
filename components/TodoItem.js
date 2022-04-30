@@ -1,19 +1,21 @@
 import React from "react";
 
 
-const TodoItem = ({ setNote, setList, list, itemObj }) =>{
+const TodoItem = ({ setNotice, setList, list, itemObj }) =>{
 
     const remove = () =>{
-        let newList;
-        for(let num = 0 ; num < list.length ; num++){
-            if(list[num].id === itemObj.id){
-                list.splice(num,1);
-                newList=JSON.parse(JSON.stringify(list));
-                setList(newList);
+        if(list[0]!==null){
+            let newList;
+            for(let num = 0 ; num < list.length ; num++){
+                if(list[num].id === itemObj.id){
+                    list.splice(num,1);
+                    newList=JSON.parse(JSON.stringify(list));
+                    setList(newList);
+                }
             }
-        }
-        if(newList[0]==null){
-            setNote("尚未有待辦事項");
+
+        }else{
+            setNotice("尚未有待辦事項");
         }
     }
     return(

@@ -1,11 +1,6 @@
 {
   "projects": {
     "default": "coffee-chat-chat"
-  },
-  "hosting": {
-    "rewrites": [ {
-      "source": "public",
-      "destination": "./public/index.html"
-    } ]
   }
+  
 }

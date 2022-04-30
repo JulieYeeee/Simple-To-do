@@ -65,4 +65,40 @@
     }
 }
 
+@media screen and (max-width:1000px) {
+    .list-page-main{
+        .list-element-container{
+            width: 90%;
+            form{
+                width:40%;
+            }
+        }
+    }
+}
+
+@media screen and (max-width:650px) {
+    .list-page-main{
+        .list-element-container{
+            width: 90%;
+            form{
+                width:60%;
+            }
+        }
+    }
+}
+@media screen and (max-width:450px) {
+    .list-page-main{
+        .list-element-container{
+            width: 90%;
+            form{
+                width:80%;
+                flex-direction: column;
+                button{
+                    margin-top:20px;
+                }
+            }
+        }
+    }
+}
+
 @import "TodoItem";

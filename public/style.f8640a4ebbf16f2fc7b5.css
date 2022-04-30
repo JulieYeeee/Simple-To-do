@@ -327,6 +327,40 @@ nav .inner-nav .menu-list {
   margin: 50px;
 }
 
+@media screen and (max-width: 1000px) {
+  .list-page-main .list-element-container {
+    width: 90%;
+  }
+  .list-page-main .list-element-container form {
+    width: 40%;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .list-page-main .list-element-container {
+    width: 90%;
+  }
+  .list-page-main .list-element-container form {
+    width: 60%;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .list-page-main .list-element-container {
+    width: 90%;
+  }
+  .list-page-main .list-element-container form {
+    width: 80%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .list-page-main .list-element-container form button {
+    margin-top: 20px;
+  }
+}
+
 .todo-container {
   width: 50%;
   display: -webkit-box;
@@ -355,6 +389,8 @@ nav .inner-nav .menu-list {
   border-bottom: 1px solid #f0efef;
   padding: 20px 0;
   color: #1b7751;
+  -webkit-animation: showup 0.5s;
+          animation: showup 0.5s;
 }
 
 .todo-container .todo-item p {
@@ -372,10 +408,9 @@ nav .inner-nav .menu-list {
   border-left: 1px solid #f0efef;
   cursor: pointer;
   position: relative;
-  background: rgba(42, 186, 126, 0.379);
 }
 
-.todo-container .todo-item .delete-btn::before {
+.todo-container .todo-item .delete-btn::after {
   content: "";
   background: rgba(42, 186, 126, 0.64);
   position: absolute;
@@ -385,10 +420,37 @@ nav .inner-nav .menu-list {
   height: 100%;
 }
 
-.todo-container .todo-item .delete-btn:hover:before {
-  -webkit-transition: ease 0.5s;
-  transition: ease 0.5s;
+.todo-container .todo-item .delete-btn:hover:after {
+  -webkit-transition: ease 0.3s;
+  transition: ease 0.3s;
   width: 100%;
+  z-index: -10;
+}
+
+.todo-container .todo-item .delete-btn:hover {
+  color: white;
+}
+
+@-webkit-keyframes showup {
+  0% {
+    -webkit-transform: translateY(-5px);
+            transform: translateY(-5px);
+  }
+  100% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+}
+
+@keyframes showup {
+  0% {
+    -webkit-transform: translateY(-5px);
+            transform: translateY(-5px);
+  }
+  100% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
 }
 
 @-webkit-keyframes color {
@@ -406,5 +468,11 @@ nav .inner-nav .menu-list {
   }
   100% {
     background: #f0efef;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .todo-container {
+    width: 70%;
   }
 }

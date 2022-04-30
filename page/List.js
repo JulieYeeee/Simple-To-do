@@ -3,18 +3,19 @@ import TodoItem from "../components/TodoItem"
 
 
 const List = () =>{
-
+    //detect input value
     let [ item , setItem ] = useState("");
     const inputChange = (e) =>{
         setItem(e.target.value);
     };
-    let [ note, setNote ] = useState("尚未有待辦事項");
+    //if no to-do item exist, show a notice"尚未有待辦事項"
+    let [ notice, setNotice ] = useState("尚未有待辦事項");
     let [ num , setNum] = useState(0);
     let [ list , setList ] = useState([]);    
     const addToList = (e) =>{
         e.preventDefault();
         if(item!==""){
-            setNote("");
+            setNotice("");
             setNum(num+1);
             setList([...list , { item:item , id:num }]);
         }
@@ -30,9 +31,9 @@ const List = () =>{
                 </form>
                 <div className="bar"></div>
                 <div className="todo-container">
-                    <p>{note}</p>
+                    <p>{notice}</p>
                     {list.map(( itemObj )=>
-                        <TodoItem setNote={setNote} setList={setList} list={list} itemObj={itemObj} key={itemObj.id}/>
+                        <TodoItem setNotice={setNotice} setList={setList} list={list} itemObj={itemObj} key={itemObj.id}/>
                     )}
                 </div>
             </div>

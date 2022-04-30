@@ -7,7 +7,7 @@ module.exports = {
     entry: "./src/index.js",
     output: {
       path: path.resolve(__dirname, "public"),
-      filename: "main.bundle.js",
+      filename: "main.bundle.[hash].js",
     },
     devServer: {
         static: {
@@ -21,7 +21,7 @@ module.exports = {
             template: "./base.html",      
         }),
         new MiniCssExtractPlugin({
-            filename: "style.css",
+            filename: "style.[hash].css",
         })
     ],
     module:{
